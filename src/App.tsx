@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, X } from 'lucide-react';
-import { Brand, BackgroundVideo } from './shared';
+import { Brand, BackgroundVideo, MobileMenuPointer } from './shared';
 
 const STATS = [
   { value: '250+', label: 'Brands Transformed' },
@@ -38,6 +38,8 @@ function App() {
             <div className="h-0.5 w-4 bg-white" />
           </button>
         </nav>
+
+        <MobileMenuPointer />
 
         <div className="flex flex-1 items-center px-6 sm:px-10 lg:px-16">
           <div className="max-w-2xl">
