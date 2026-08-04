@@ -9,23 +9,23 @@ export function MobileMenuPointer() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute left-6 top-14 right-16 z-20 sm:left-10 sm:top-16 md:hidden"
+      className="pointer-events-none absolute left-6 right-6 top-14 z-20 sm:left-10 sm:right-10 sm:top-16 md:hidden"
     >
-      <div className="relative">
+      <div className="relative ml-auto">
         <span className="font-caveat absolute -bottom-1 left-0 -rotate-6 text-2xl text-white/90 sm:text-3xl">
           get in touch
         </span>
         <svg
           viewBox="0 0 260 110"
-          className="h-auto w-full max-w-[200px] text-white/70"
+          className="ml-auto h-auto w-full max-w-[300px] text-white/70"
           fill="none"
           stroke="currentColor"
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <path d="M8,95 C50,45 95,90 135,50 C165,25 195,18 222,14" />
-          <path d="M202,6 L226,13 L212,28" />
+          <path d="M8,95 C55,45 100,90 140,50 C175,18 215,8 250,6" />
+          <path d="M226,1 L252,5 L234,22" />
         </svg>
       </div>
     </div>
