@@ -94,15 +94,19 @@
     0%,
     100% {
       color: #fbbf24;
+      border-color: #fbbf24;
     }
     25% {
       color: #f472b6;
+      border-color: #f472b6;
     }
     50% {
       color: #22d3ee;
+      border-color: #22d3ee;
     }
     75% {
       color: #a78bfa;
+      border-color: #a78bfa;
     }
   }
 
