@@ -4,9 +4,9 @@ import { ArrowUpRight, X } from 'lucide-react';
 import { Brand, BackgroundVideo, MobileMenuPointer } from './shared';
 
 const STATS = [
-  { value: '250+', label: 'Brands Transformed' },
-  { value: '95%', label: 'Client Retention' },
-  { value: '10+', label: 'Years in the Game' },
+  { value: '30+', label: 'Brands Transformed' },
+  { value: '100%', label: 'Client Retention' },
+  { value: '4+', label: 'Years in the Game' },
 ];
 
 function App() {
