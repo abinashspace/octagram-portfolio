@@ -97,7 +97,7 @@ function App() {
           <Link
             to="/contact"
             onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2 border border-white/30 px-6 py-3 font-inter text-xs uppercase tracking-widest text-white transition-all duration-500 hover:border-white/60 hover:bg-white/10"
+            className="animate-color-blink flex items-center gap-2 border px-6 py-3 font-inter text-xs uppercase tracking-widest transition-all duration-500 hover:bg-white/10"
             style={{
               transitionDelay: '100ms',
               opacity: menuOpen ? 1 : 0,
