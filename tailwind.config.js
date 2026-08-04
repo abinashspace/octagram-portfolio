@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         podium: ['"FSP DEMO - PODIUM Sharp 4.11"', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
+        caveat: ['Caveat', 'cursive'],
       },
     },
   },
