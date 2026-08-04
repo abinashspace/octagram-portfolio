@@ -109,34 +109,4 @@
   .animate-color-blink {
     animation: color-blink 3s ease-in-out infinite;
   }
-
-  @keyframes smoke-rise {
-    0% {
-      opacity: 0;
-      transform: translateY(0) scale(0.5);
-    }
-    12% {
-      opacity: 0.45;
-    }
-    40% {
-      opacity: 0.2;
-    }
-    70% {
-      opacity: 0.04;
-      transform: translateY(-38px) scale(1.5);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(-48px) scale(1.7);
-    }
-  }
-
-  .smoke-puff {
-    position: absolute;
-    bottom: 0;
-    border-radius: 9999px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 70%);
-    filter: blur(3px);
-    animation: smoke-rise 2.6s ease-out infinite;
-  }
 }

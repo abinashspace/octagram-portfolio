@@ -54,26 +54,13 @@ function App() {
             </h1>
 
             <div className="animate-fade-up-delay-3 mt-8 flex flex-wrap items-center gap-4 sm:gap-6 lg:mt-10">
-              <div className="relative inline-block">
-                <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-full">
-                  <span
-                    className="smoke-puff left-1/2"
-                    style={{ width: '12px', height: '12px', marginLeft: '-20px', animationDelay: '0s' }}
-                  />
-                  <span
-                    className="smoke-puff left-1/2"
-                    style={{ width: '16px', height: '16px', marginLeft: '-8px', animationDelay: '0.9s' }}
-                  />
-                  <span
-                    className="smoke-puff left-1/2"
-                    style={{ width: '10px', height: '10px', marginLeft: '8px', animationDelay: '1.8s' }}
-                  />
-                </div>
-                <button className="group flex items-center gap-2 bg-black px-5 py-3 font-inter text-[11px] uppercase tracking-widest text-white transition hover:bg-neutral-900 sm:px-7 sm:py-4 sm:text-xs">
-                  See Our Work
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </button>
-              </div>
+              <Link
+                to="/work"
+                className="group flex items-center gap-2 bg-black px-5 py-3 font-inter text-[11px] uppercase tracking-widest text-white transition hover:bg-neutral-900 sm:px-7 sm:py-4 sm:text-xs"
+              >
+                See Our Work
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </Link>
             </div>
 
             <div className="animate-fade-up-delay-4 mt-8 flex flex-wrap gap-6 sm:mt-10 sm:gap-12 lg:mt-14 lg:gap-16">
