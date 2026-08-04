@@ -11,18 +11,18 @@ const PROJECTS = [
     link: 'https://aethera-kappa.vercel.app/',
   },
   {
-    title: 'Nova.ai',
-    category: 'AI Automation Studio',
-    description:
-      'Marketing site for NovaAI, an AI automation and agent-development studio that helps companies replace manual workflows with AI-driven systems — three core services (automation, integration, agent development), a "100+ businesses automated" trust signal, and direct booking CTAs to convert visitors into consultation calls.',
-    link: 'https://novalucid.vercel.app/',
-  },
-  {
     title: 'Arivom',
     category: 'Government Scheme Eligibility Checker',
     description:
       'Helps citizens quickly find out which government welfare schemes they actually qualify for — answer a few questions and get a transparent, rule-based breakdown of eligible schemes, no paperwork or guesswork required.',
     link: 'https://arivom-livid.vercel.app/',
+  },
+  {
+    title: 'Nova.ai',
+    category: 'AI Automation Studio',
+    description:
+      'Marketing site for NovaAI, an AI automation and agent-development studio that helps companies replace manual workflows with AI-driven systems — three core services (automation, integration, agent development), a "100+ businesses automated" trust signal, and direct booking CTAs to convert visitors into consultation calls.',
+    link: 'https://novalucid.vercel.app/',
   },
 ];
 
