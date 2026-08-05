@@ -18,11 +18,11 @@ const PROJECTS = [
     link: 'https://arivom-livid.vercel.app/',
   },
   {
-    title: 'Nova.ai',
-    category: 'AI Automation Studio',
+    title: 'Odyssey',
+    category: 'Travel Planning App',
     description:
-      'Marketing site for NovaAI, an AI automation and agent-development studio that helps companies replace manual workflows with AI-driven systems — three core services (automation, integration, agent development), a "100+ businesses automated" trust signal, and direct booking CTAs to convert visitors into consultation calls.',
-    link: 'https://novalucid.vercel.app/',
+      'Where will you go next? Plan your next adventure with ease. Discover destinations, map out your route, and turn wanderlust into a ready-to-go itinerary — all in one place. Save your favorite spots, get personalized suggestions, and travel smarter every time.',
+    link: 'https://odyssey-design.vercel.app/',
   },
 ];
 
