@@ -28,7 +28,7 @@ function App() {
           <LiquidMetalButton
             type="button"
             onClick={() => navigate('/contact')}
-            className="md:hidden"
+            className="origin-right scale-[0.7] md:hidden"
           >
             Get in Touch
             <ArrowUpRight className="h-4 w-4" />
