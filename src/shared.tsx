@@ -1,34 +1,45 @@
+import type { ReactNode } from 'react';
 // @ts-expect-error The registry component is JavaScript rather than TypeScript.
 import GradientWaves from '../@/components/GradientWaves.jsx';
+// @ts-expect-error The registry component is JavaScript rather than TypeScript.
+import ClickSpark from '../@/components/ClickSpark.jsx';
+// @ts-expect-error The registry component is JavaScript rather than TypeScript.
+import OptionWheel from '../@/components/OptionWheel.jsx';
 
 export function Brand({ textClassName }: { textClassName: string }) {
   return <span className={textClassName}>OCTAGRAM</span>;
 }
 
-export function MobileMenuPointer() {
+export function ClickSparkEffect({ children }: { children: ReactNode }) {
   return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none absolute right-6 top-14 z-20 sm:right-10 sm:top-16 md:hidden"
-    >
-      <div className="relative w-[150px] sm:w-[170px]">
-        <span className="font-caveat absolute -bottom-1 left-0 -rotate-6 text-lg text-white/90 sm:text-xl">
-          get in touch
-        </span>
-        <svg
-          viewBox="0 0 150 70"
-          className="h-auto w-full text-white/70"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M6,55 L55,32 L80,36 L128,8" />
-          <path d="M110,4 L130,8 L122,24" />
-        </svg>
-      </div>
-    </div>
+    <ClickSpark sparkColor="#3B82F6" sparkSize={10} sparkRadius={18} sparkCount={8} duration={450} extraScale={1.1}>
+      {children}
+    </ClickSpark>
+  );
+}
+
+type CategoryWheelProps = {
+  items: string[];
+};
+
+export function CategoryWheel({ items }: CategoryWheelProps) {
+  return (
+    <OptionWheel
+      items={items}
+      defaultSelected={Math.floor(items.length / 2)}
+      textColor="#94A3B8"
+      activeColor="#3B82F6"
+      fontSize={1.5}
+      spacing={1.35}
+      inset={16}
+      tilt={7}
+      blur={0}
+      fade={0.12}
+      minOpacity={0.6}
+      smoothing={180}
+      loop
+      className="font-inter font-bold uppercase tracking-wide"
+    />
   );
 }
 
