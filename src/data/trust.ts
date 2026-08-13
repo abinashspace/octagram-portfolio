@@ -1,0 +1,15 @@
+export const trustCategories: string[] = [
+  'Gyms',
+  'Clinics',
+  'Salons',
+  'Restaurants',
+  'Cafes',
+  'Hotels',
+  'Real Estate',
+  'Interior Designers',
+  'Jewellery Shops',
+  'Wedding Planners',
+  'Coaching Centers',
+  'Photography Studios',
+  'Car Service Centers',
+];
