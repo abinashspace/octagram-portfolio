@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
 // @ts-expect-error The registry component is JavaScript rather than TypeScript.
-import GradientWaves from '../@/components/GradientWaves.jsx';
+import GradientWaves from '@/components/GradientWaves.jsx';
 // @ts-expect-error The registry component is JavaScript rather than TypeScript.
-import ClickSpark from '../@/components/ClickSpark.jsx';
+import ClickSpark from '@/components/ClickSpark.jsx';
 // @ts-expect-error The registry component is JavaScript rather than TypeScript.
-import OptionWheel from '../@/components/OptionWheel.jsx';
+import OptionWheel from '@/components/OptionWheel.jsx';
 
 export function Brand({ textClassName }: { textClassName: string }) {
   return <span className={textClassName}>OCTAGRAM</span>;
