@@ -5,13 +5,34 @@ import { projects } from '../data/projects';
 
 const showcase = projects[0];
 
+const cloudWidths = [360, 480, 420, 560, 400];
+
 export function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] w-full items-center overflow-hidden bg-paper pb-20 pt-32 sm:pt-36 lg:pt-32">
+    <section className="relative flex min-h-[100svh] w-full items-center overflow-hidden pb-20 pt-32 sm:pt-36 lg:pt-32">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div
+          className="absolute inset-0 bg-contain bg-center bg-repeat"
+          style={{ backgroundImage: "url('https://images.shadcnspace.com/assets/backgrounds/real-estate-bg.webp')" }}
+        />
+
+        <div className="absolute inset-x-0 top-10 flex w-max animate-marquee gap-32 sm:top-16">
+          {[...cloudWidths, ...cloudWidths].map((width, index) => (
+            <img
+              key={index}
+              src="https://images.shadcnspace.com/assets/backgrounds/cloud.webp"
+              alt=""
+              style={{ width }}
+              className="opacity-60"
+            />
+          ))}
+        </div>
+
         <div className="absolute -right-[10%] -top-[15%] h-[42rem] w-[42rem] rounded-full bg-accent-soft blur-[120px]" />
         <div className="absolute right-[8%] top-[15%] h-[26rem] w-[26rem] rounded-full bg-accent/30 blur-[100px]" />
         <div className="absolute left-[-8%] bottom-[0%] h-[24rem] w-[24rem] rounded-full bg-primary/10 blur-[110px]" />
+
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-paper/50 to-paper" />
       </div>
 
       <Container className="relative z-10">
