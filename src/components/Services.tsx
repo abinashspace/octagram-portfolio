@@ -2,11 +2,15 @@ import { services } from '../data/services';
 import { SectionHeading } from './ui/section-heading';
 import { Container } from './ui/container';
 import { ServiceCard } from './ServiceCard';
+import { AmbientGlow } from './ui/ambient-glow';
+import { CloudMarquee } from './ui/cloud-marquee';
 
 export function Services() {
   return (
-    <section id="services" className="relative bg-paper py-24 sm:py-32">
-      <Container>
+    <section id="services" className="relative overflow-hidden bg-paper py-24 sm:py-32">
+      <AmbientGlow variant="paper" />
+      <CloudMarquee reverse />
+      <Container className="relative z-10">
         <SectionHeading
           eyebrow="Services"
           title="Everything your business needs to look great online."

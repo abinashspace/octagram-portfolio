@@ -1,21 +1,44 @@
+import { useRef } from 'react';
+import { motion, useScroll, useSpring } from 'motion/react';
 import { processSteps } from '../data/process';
 import { SectionHeading } from './ui/section-heading';
 import { Container } from './ui/container';
 import { Reveal } from './ui/reveal';
+import { AmbientGlow } from './ui/ambient-glow';
+import { CloudMarquee } from './ui/cloud-marquee';
 
 export function Process() {
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ['start 0.85', 'end 0.6'],
+  });
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
+
   return (
-    <section id="process" className="relative bg-paper py-24 sm:py-32">
-      <Container>
+    <section id="process" className="relative overflow-hidden bg-paper py-24 sm:py-32">
+      <AmbientGlow variant="paper" />
+      <CloudMarquee reverse />
+      <Container className="relative z-10">
         <SectionHeading eyebrow="Process" title="From idea to launch." align="center" className="mx-auto" />
 
-        <div className="relative mt-16 sm:mt-20">
+        <div ref={timelineRef} className="relative mt-16 sm:mt-20">
           <div
             className="absolute bottom-6 left-6 top-6 w-px bg-border sm:hidden"
             aria-hidden="true"
           />
+          <motion.div
+            className="absolute bottom-6 left-6 top-6 w-px origin-top bg-primary sm:hidden"
+            style={{ scaleY: progress }}
+            aria-hidden="true"
+          />
           <div
             className="absolute left-[12.5%] right-[12.5%] top-6 hidden h-px bg-border sm:block"
+            aria-hidden="true"
+          />
+          <motion.div
+            className="absolute left-[12.5%] right-[12.5%] top-6 hidden h-px origin-left bg-primary sm:block"
+            style={{ scaleX: progress }}
             aria-hidden="true"
           />
 

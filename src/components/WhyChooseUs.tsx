@@ -3,11 +3,15 @@ import { SectionHeading } from './ui/section-heading';
 import { Container } from './ui/container';
 import { Reveal } from './ui/reveal';
 import { MagicCard } from './ui/magic-card';
+import { AmbientGlow } from './ui/ambient-glow';
+import { CloudMarquee } from './ui/cloud-marquee';
 
 export function WhyChooseUs() {
   return (
-    <section className="relative bg-accent-soft py-24 sm:py-32">
-      <Container>
+    <section className="relative overflow-hidden bg-accent-soft py-24 sm:py-32">
+      <AmbientGlow variant="soft" />
+      <CloudMarquee />
+      <Container className="relative z-10">
         <SectionHeading eyebrow="Why Us" title="Why businesses choose us." />
 
         <div className="mt-14 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-x-6 gap-y-6 sm:mt-16">

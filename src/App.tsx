@@ -5,12 +5,14 @@ import { Footer } from './components/Footer';
 import { useScrollToHash } from './hooks/useScrollToHash';
 import { WHATSAPP_LINK } from './lib/constants';
 import { ClickSparkEffect } from './shared';
+import { ScrollProgress } from './components/ui/scroll-progress';
 
 function App() {
   useScrollToHash();
 
   return (
     <div className="relative min-h-screen w-full bg-paper text-ink">
+      <ScrollProgress />
       <ClickSparkEffect>
         <Navbar />
         <main>

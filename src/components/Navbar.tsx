@@ -4,10 +4,12 @@ import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { Brand } from '../shared';
 import { NAV_LINKS } from '../lib/constants';
 import { ButtonLink } from './ui/button';
+import { Magnet } from './ui/magnet';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeHash, setActiveHash] = useState('');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -22,6 +24,28 @@ export function Navbar() {
       document.body.style.overflow = '';
     };
   }, [menuOpen]);
+
+  useEffect(() => {
+    const sectionIds = NAV_LINKS.map((item) => item.href.split('#')[1]).filter(Boolean);
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((node): node is HTMLElement => Boolean(node));
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActiveHash(visible.target.id);
+      },
+      { rootMargin: '-45% 0px -45% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -39,22 +63,35 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
-          {NAV_LINKS.map((item) => (
-            <Link
-              key={item.href}
-              to={item.href}
-              className="font-inter text-xs font-medium uppercase tracking-[0.18em] text-ink-muted transition-colors duration-200 hover:text-ink"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((item) => {
+            const isActive = activeHash === item.href.split('#')[1];
+            return (
+              <Link
+                key={item.href}
+                to={item.href}
+                className={`relative font-inter text-xs font-medium uppercase tracking-[0.18em] transition-colors duration-200 hover:text-ink ${
+                  isActive ? 'text-ink' : 'text-ink-muted'
+                }`}
+              >
+                {item.label}
+                <span
+                  className={`absolute -bottom-1.5 left-0 h-px bg-primary transition-all duration-300 ${
+                    isActive ? 'w-full' : 'w-0'
+                  }`}
+                  aria-hidden="true"
+                />
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden lg:block">
-          <ButtonLink to="/#contact" size="sm">
-            Get a Website
-            <ArrowUpRight className="h-3.5 w-3.5" />
-          </ButtonLink>
+          <Magnet padding={40} magnetStrength={6}>
+            <ButtonLink to="/#contact" size="sm">
+              Get a Website
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </ButtonLink>
+          </Magnet>
         </div>
 
         <button

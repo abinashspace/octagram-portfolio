@@ -1,5 +1,6 @@
 import type { LucideIcon } from 'lucide-react';
 import { Reveal } from './ui/reveal';
+import { TiltCard } from './ui/tilt-card';
 
 type ServiceCardProps = {
   number: string;
@@ -12,7 +13,11 @@ type ServiceCardProps = {
 export function ServiceCard({ number, icon: Icon, title, description, delay = 0 }: ServiceCardProps) {
   return (
     <Reveal delay={delay} className="h-full">
-      <div className="group relative flex h-full flex-col gap-6 overflow-hidden rounded-2xl border border-border bg-surface p-7 transition-all duration-500 hover:-translate-y-1 hover:border-accent-border hover:shadow-card sm:p-8">
+      <TiltCard
+        maxTilt={6}
+        liftOnHover={4}
+        className="group relative flex h-full flex-col gap-6 overflow-hidden rounded-2xl border border-border bg-surface p-7 transition-colors duration-500 hover:border-accent-border hover:shadow-card sm:p-8"
+      >
         <span className="absolute right-6 top-5 font-podium text-3xl text-ink-muted/15 transition-colors duration-500 group-hover:text-primary/20 sm:text-4xl">
           {number}
         </span>
@@ -23,7 +28,7 @@ export function ServiceCard({ number, icon: Icon, title, description, delay = 0 
           <h3 className="font-podium text-lg uppercase tracking-wide text-ink sm:text-xl">{title}</h3>
           <p className="mt-3 font-inter text-sm leading-relaxed text-ink-muted">{description}</p>
         </div>
-      </div>
+      </TiltCard>
     </Reveal>
   );
 }

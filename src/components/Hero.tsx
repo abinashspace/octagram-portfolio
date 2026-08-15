@@ -1,11 +1,12 @@
 import { ArrowUpRight, ArrowRight, ExternalLink } from 'lucide-react';
 import { ButtonLink } from './ui/button';
 import { Container } from './ui/container';
+import { Magnet } from './ui/magnet';
+import { TiltCard } from './ui/tilt-card';
+import { CloudMarquee } from './ui/cloud-marquee';
 import { projects } from '../data/projects';
 
 const showcase = projects[0];
-
-const cloudWidths = [360, 480, 420, 560, 400];
 
 export function Hero() {
   return (
@@ -16,17 +17,7 @@ export function Hero() {
           style={{ backgroundImage: "url('https://images.shadcnspace.com/assets/backgrounds/real-estate-bg.webp')" }}
         />
 
-        <div className="absolute inset-x-0 top-10 flex w-max animate-marquee gap-32 sm:top-16">
-          {[...cloudWidths, ...cloudWidths].map((width, index) => (
-            <img
-              key={index}
-              src="https://images.shadcnspace.com/assets/backgrounds/cloud.webp"
-              alt=""
-              style={{ width }}
-              className="opacity-60"
-            />
-          ))}
-        </div>
+        <CloudMarquee />
 
         <div className="absolute -right-[10%] -top-[15%] h-[42rem] w-[42rem] rounded-full bg-accent-soft blur-[120px]" />
         <div className="absolute right-[8%] top-[15%] h-[26rem] w-[26rem] rounded-full bg-accent/30 blur-[100px]" />
@@ -54,10 +45,12 @@ export function Hero() {
             </p>
 
             <div className="animate-fade-up-delay-3 mt-10 flex flex-wrap items-center gap-4">
-              <ButtonLink to="/#contact">
-                Start a Project
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-              </ButtonLink>
+              <Magnet padding={60} magnetStrength={5}>
+                <ButtonLink to="/#contact">
+                  Start a Project
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                </ButtonLink>
+              </Magnet>
               <ButtonLink to="/#work" variant="secondary">
                 View Our Work
               </ButtonLink>
@@ -65,23 +58,25 @@ export function Hero() {
           </div>
 
           <div className="animate-fade-up-delay-3 relative mx-auto w-full max-w-md lg:max-w-none">
-            <div className="animate-float-slow relative rounded-2xl border border-border bg-white p-2 shadow-[0_40px_100px_-35px_rgba(23,32,51,0.35)] sm:p-3">
-              <div className="mb-2 flex items-center gap-1.5 px-1.5 sm:mb-3">
-                <span className="h-2.5 w-2.5 rounded-full bg-ink/10" />
-                <span className="h-2.5 w-2.5 rounded-full bg-ink/10" />
-                <span className="h-2.5 w-2.5 rounded-full bg-ink/10" />
-              </div>
-              <div className="overflow-hidden rounded-lg">
-                <img
-                  src={showcase.image}
-                  alt={`${showcase.name}, a project by OCTAGRAM`}
-                  width={1200}
-                  height={800}
-                  className="aspect-[4/3] w-full object-cover object-top transition-transform duration-700 hover:scale-105"
-                  loading="eager"
-                  fetchPriority="high"
-                />
-              </div>
+            <div className="animate-float-slow">
+              <TiltCard maxTilt={6} className="relative rounded-2xl border border-border bg-white p-2 shadow-[0_40px_100px_-35px_rgba(23,32,51,0.35)] sm:p-3">
+                <div className="mb-2 flex items-center gap-1.5 px-1.5 sm:mb-3">
+                  <span className="h-2.5 w-2.5 rounded-full bg-ink/10" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-ink/10" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-ink/10" />
+                </div>
+                <div className="overflow-hidden rounded-lg">
+                  <img
+                    src={showcase.image}
+                    alt={`${showcase.name}, a project by OCTAGRAM`}
+                    width={1200}
+                    height={800}
+                    className="aspect-[4/3] w-full object-cover object-top transition-transform duration-700 hover:scale-105"
+                    loading="eager"
+                    fetchPriority="high"
+                  />
+                </div>
+              </TiltCard>
             </div>
 
             <a

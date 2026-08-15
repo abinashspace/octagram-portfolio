@@ -72,6 +72,19 @@
     animation: marquee 32s linear infinite !important;
   }
 
+  @keyframes marquee-reverse {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-marquee-reverse {
+    animation: marquee-reverse 38s linear infinite !important;
+  }
+
   @keyframes float-slow {
     0%,
     100% {
@@ -98,6 +111,40 @@
 
   .animate-glow-pulse {
     animation: glow-pulse 5s ease-in-out infinite;
+  }
+
+  @keyframes drift-a {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(5%, -7%) scale(1.08);
+    }
+    66% {
+      transform: translate(-4%, 5%) scale(0.95);
+    }
+  }
+
+  .animate-drift-a {
+    animation: drift-a 20s ease-in-out infinite;
+  }
+
+  @keyframes drift-b {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(-6%, 6%) scale(1.06);
+    }
+    66% {
+      transform: translate(4%, -4%) scale(0.94);
+    }
+  }
+
+  .animate-drift-b {
+    animation: drift-b 24s ease-in-out infinite;
   }
 
   @keyframes fade-up {
